@@ -5,50 +5,85 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "hospitals")
 public class Hospital {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    private String name;
+	private String name;
 
-    private String location;
+	private String location;
 
-    // Constructors
-    public Hospital() {}
+	@Transient
+	private String adminName;
 
-    public Hospital(String name, String location) {
-        this.name = name;
-        this.location = location;
-    }
+	@Transient
+	private String specialization;
 
-    // Getters and Setters
-    public Long getId() {
-        return id;
-    }
+	@Transient
+	private String emailId;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	// Constructors
+	public Hospital() {
+	}
 
-    public String getName() {
-        return name;
-    }
+	public Hospital(String name, String location) {
+		this.name = name;
+		this.location = location;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	// Getters and Setters
+	public Long getId() {
+		return id;
+	}
 
-    public String getLocation() {
-        return location;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public String getAdminName() {
+		return adminName;
+	}
+
+	public void setAdminName(String adminName) {
+		this.adminName = adminName;
+	}
+
+	public String getSpecialization() {
+		return specialization;
+	}
+
+	public void setSpecialization(String specialization) {
+		this.specialization = specialization;
+	}
+
+	public String getEmailId() {
+		return emailId;
+	}
+
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
 
 }

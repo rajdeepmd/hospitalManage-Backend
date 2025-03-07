@@ -30,6 +30,8 @@ public class Patient {
 	@JoinColumn(name = "doctor_id")
 	private Doctor doctor;
 
+	private String contactNo;
+	
 	// Constructors
 	public Patient() {
 	}
@@ -95,6 +97,14 @@ public class Patient {
 
 	public void setDisease(String disease) {
 		this.disease = disease;
+	}
+
+	public String getContactNo() {
+		return contactNo;
+	}
+
+	public void setContactNo(String contactNo) {
+		this.contactNo = contactNo;
 	}
 
 }
